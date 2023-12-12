@@ -2,9 +2,7 @@ name: Submit contracts hash to Subscan
 
 on:
   push:
-    branches:
-      - main
-      - master
+      tags: ["*"]
 
 jobs:
   build:
@@ -15,15 +13,6 @@ jobs:
 
       - name: Compile contract and Submit hash to Subscan
         shell: bash
-        env:
-          working_directory: ./example
-          manifest_path: Cargo.toml
-          toolchain: stable
-          compiler_tag: v2.2.1
-          rust_version: 1.68.0
-          compiler_args: --release
         run: |
           wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
           chmod +x submit-contracts-hash && ./submit-contracts-hash -config ./subscan_contract_hash_submission.yaml
-
-
