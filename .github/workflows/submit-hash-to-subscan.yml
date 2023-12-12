@@ -15,7 +15,7 @@ jobs:
 
       - name: Compile contract and Submit hash to Subscan
         shell: bash
-        with:
+        env:
           working_directory: ./example
           manifest_path: Cargo.toml
           toolchain: stable
