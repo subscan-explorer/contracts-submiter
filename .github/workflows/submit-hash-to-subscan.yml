@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Compile contract and Submit hash to Subscan
-        run: |
-          wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
-          chmod +x submit-contracts-hash && ./submit-contracts-hash
         with:
           working_directory: ./example
-          manifest_path: ./Cargo.toml
+          manifest_path: Cargo.toml
           toolchain: stable
           compiler_tag: v2.2.1
           rust_version: 1.68.0
           compiler_args: --release
+        run: |
+          wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
+          chmod +x submit-contracts-hash && ./submit-contracts-hash
 
 
