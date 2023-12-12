@@ -23,8 +23,7 @@ jobs:
           rust_version: 1.68.0
           compiler_args: --release
         run: |
-          env
-#          wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
-#          chmod +x submit-contracts-hash && ./submit-contracts-hash
+          wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
+          chmod +x submit-contracts-hash && ./submit-contracts-hash
 
 
