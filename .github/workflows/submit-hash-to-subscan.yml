@@ -2,7 +2,7 @@ name: Submit contracts hash to Subscan
 
 on:
   push:
-      tags: ["*"]
+      tags: ["subscan-verify*"]
 
 jobs:
   build:

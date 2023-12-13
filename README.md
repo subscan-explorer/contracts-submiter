@@ -5,13 +5,13 @@ This project is primarily designed for validating contract information with Subs
 #### New Repository
 * Click the `Use this template` button to create a new repository.
 * Construct your own contract and modify the [subscan_contract_hash_submission.yaml](./subscan_contract_hash_submission.yaml) configuration according to your requirements.
-* Create a tag and push it to your repository, subsequently, the GitHub action will automatically operate and submit the contract information to Subscan.
+* Create a tag with the prefix `subscan-verify` and push it to your repository. Subsequently, GitHub Actions will automatically execute and submit the contract information to Subscan.
 
 #### Existing Repository
 * Copy the following files or directories to your project,
     * [subscan_contract_hash_submission.yaml](./subscan_contract_hash_submission.yaml)
     * [.github](./.github)
-* Whenever a new tag is associated with your project, GitHub action will automatically operate and submit the contract information to Subscan.
+* Create a tag with the prefix `subscan-verify` and push it to your repository. Subsequently, GitHub Actions will automatically execute and submit the contract information to Subscan.
 
 ### Configuration
 Default configuration file [subscan_contract_hash_submission.yaml](./subscan_contract_hash_submission.yaml)
