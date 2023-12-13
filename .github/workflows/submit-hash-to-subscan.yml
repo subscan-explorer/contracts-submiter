@@ -19,12 +19,9 @@ jobs:
         run: |
           wget https://storage.googleapis.com/wasm-compile-artifacts.gcs.subscan.io/submit-contracts-hash/latest/submit-contracts-hash
           chmod +x submit-contracts-hash && ./submit-contracts-hash -config ./subscan_contract_hash_submission.yaml
-      - name: Get commit message
-        id: get_commit_message
-        run: |
-          echo "::set-output name=commit_message::$(git log -1 --pretty=%B)"
+
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ steps.compile_contract_and_submit_hash_to_subscan.outputs.contract_file_name }}"
-          body: ${{ steps.get_commit_message.outputs.commit_message }}
+          body: ${{ github.event.head_commit.message }}
           token: ${{ secrets.GITHUB_TOKEN }}
