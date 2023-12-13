@@ -27,4 +27,4 @@ jobs:
         with:
           artifacts: "${{ steps.compile_contract_and_submit_hash_to_subscan.outputs.contract_file_name }}"
           body: ${{ steps.get_commit_message.outputs.commit_message }}
-          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
