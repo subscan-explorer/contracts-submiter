@@ -1,4 +1,4 @@
-#### Contract Verification
+#### Contracts Submiter
 This project is primarily designed for validating contract information with Subscan.
 
 ### Usage
